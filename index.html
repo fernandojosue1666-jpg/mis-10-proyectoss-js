@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Proyectos de JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>El Reto de los 10 Proyectos de JavaScript Fernando Valera</h1>
+
+    <div class="proyecto">
+        <button class="btn">Ver +</button>
+        <div class="descripcion">Contador Inteligente</div>
+        <div class="contenido-contador">
+            <div class="container">
+                <div class="container-contador">
+                    <h1>Contador</h1>
+                    <span class="contador">0</span>
+                    <hr>
+                    <div class="buttons">
+                        <button class="quitar">Quitar</button>
+                        <button class="reiniciar">Reiniciar</button>
+                        <button class="agregar">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="proyecto">
+        <button class="btn">Ver +</button>
+        <div class="descripcion">Lista de tareas</div>
+        <div class="contenido-tareas">
+            <div class="container-tareas">
+                <h1>Lista de Tareas</h1>
+                <div class="search">
+                    <form>
+                        <input type="text" placeholder="Agregar tarea...">
+                        <button class="btn-add">+</button>
+                    </form>
+                </div>
+                <div class="li-container">
+                    <ul></ul>
+                </div>
+                <div class="empty">
+                    <p>No tienes tareas pendientes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="proyecto">
+        <button class="btn">Ver +</button>
+        <div class="descripcion">Adivina el número</div>
+        <div class="contenido-adivina">
+            <div class="contenedor">
+                <h1>Adivina el número</h1>
+                <p>Estoy pensando en un número entre 1 y 100.<br>
+                   ¿Puedes adivinar cuál es?
+                </p>
+                <input type="number" id="entrada" class="entrada" placeholder="Ingresa un número">
+                <button id="enviar" class="Enviar">Enviar</button>
+                <div id="resultadoDetalles" class="resultadoDetalles">
+                    <p id="intentos">Intentos previos:</p>
+                    <p id="ultimoResultado"></p>
+                    <p id="menorMayor"></p>
+                </div>
+                <button id="reset" class="reset" style="display: none;">Reiniciar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="proyecto">
+        <button class="btn">Ver +</button>
+        <div class="descripcion">Calculadora Basica</div>
+        <div class="contenido-calculadora">
+            <div id="calculadora">
+                <input id="pantalla" readonly>
+                <div id="botones-contenedor">
+                    <button class="operador-btn full-btn" onclick="limpiarPantalla()">C</button>
+                    <button class="btn" onclick="verEnPantalla('7')">7</button>
+                    <button class="btn" onclick="verEnPantalla('8')">8</button>
+                    <button class="btn" onclick="verEnPantalla('9')">9</button>
+                    <button class="operador-btn" onclick="verEnPantalla('+')">+</button>
+                    <button class="btn" onclick="verEnPantalla('4')">4</button>
+                    <button class="btn" onclick="verEnPantalla('5')">5</button>
+                    <button class="btn" onclick="verEnPantalla('6')">6</button>
+                    <button class="operador-btn" onclick="verEnPantalla('-')">-</button>
+                    <button class="btn" onclick="verEnPantalla('1')">1</button>
+                    <button class="btn" onclick="verEnPantalla('2')">2</button>
+                    <button class="btn" onclick="verEnPantalla('3')">3</button>
+                    <button class="operador-btn" onclick="verEnPantalla('*')">*</button>
+                    <button class="btn" onclick="verEnPantalla('.')">.</button>
+                    <button class="btn" onclick="verEnPantalla('0')">0</button>
+                    <button class="btn" onclick="calcular()">=</button>
+                    <button class="operador-btn" onclick="verEnPantalla('/')">/</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="proyecto">
+        <button class="btn">Ver +</button>
+        <div class="descripcion">Cambiador de Colores Aleatorios</div>
+        <div class="contenido-color">
+            <div class="color-card">
+                <div class="color-hex" id="hexCodeDisplay">#e1e1e1</div>
+                <button id="randomColorBtn" class="btn-color">🎲 Cambiar color</button><br>
+                <button id="copyHexBtn" class="btn-copy">📋 Copiar código HEX</button>
+                <div id="copyMessage" class="copy-feedback" style="display: none;">¡Copiado!</div>
+            </div>
+            <p style="font-size: 1.3rem; margin-top: 0.8rem; color: #555;">Haz clic en "Cambiar color" para cambiar el fondo de toda la página</p>
+        </div>
+    </div>
+
+
+<div class="proyecto">
+    <button class="btn">Ver +</button>
+    <div class="descripcion">Temporizador</div>
+    <div class="contenido-temporizador">
+        <div class="temporizador-container">
+            <h1>Temporizador</h1>
+            <div class="input-tiempo">
+                <div class="input-group">
+                    <label>Minutos:</label>
+                    <input type="number" id="minutosInput" class="tiempo-input" min="0" max="99" value="0">
+                </div>
+                <div class="input-group">
+                    <label>Segundos:</label>
+                    <input type="number" id="segundosInput" class="tiempo-input" min="0" max="59" value="0">
+                </div>
+            </div>
+            <div class="reloj" id="reloj">00:00</div>
+            <div class="temporizador-botones">
+                <button id="iniciarBtn" class="timer-btn iniciar">Iniciar</button>
+                <button id="pausarBtn" class="timer-btn pausar">Pausar</button>
+                <button id="reiniciarBtn" class="timer-btn reiniciar">Reiniciar</button>
+            </div>
+            <div id="mensajeTerminado" class="mensaje-terminado" style="display: none;">
+                ¡Tiempo terminado!
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="proyecto">
+    <button class="btn">Ver +</button>
+    <div class="descripcion">Generador de Contraseñas</div>
+    <div class="contenido-password">
+        <div class="password-container">
+            <h1>Generador de Contraseñas</h1>
+            <div class="password-display">
+                <input type="text" id="passwordInput" class="password-input" readonly placeholder="Tu contraseña aparecerá aquí">
+                <button id="copyPasswordBtn" class="copy-password-btn">Copiar</button>
+            </div>
+            <div class="password-options">
+                <div class="length-control">
+                    <label>Longitud: <span id="lengthValue">12</span></label>
+                    <input type="range" id="lengthSlider" min="6" max="20" value="12">
+                </div>
+                <div class="checkboxes">
+                    <label>
+                        <input type="checkbox" id="mayusculas" checked> Mayúsculas (A-Z)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="minusculas" checked> Minúsculas (a-z)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="numeros" checked> Números (0-9)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="simbolos"> Símbolos (!@#$%^&*)
+                    </label>
+                </div>
+            </div>
+            <button id="generarPasswordBtn" class="generar-btn">🔒 Generar Contraseña</button>
+            <div id="passwordMessage" class="password-message" style="display: none;">¡Contraseña copiada!</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="proyecto">
+    <button class="btn">Ver +</button>
+    <div class="descripcion">Piedra, Papel o Tijera</div>
+    <div class="contenido-ppt">
+        <div class="ppt-container">
+            <h1>Piedra, Papel o Tijera</h1>
+            <div class="marcador">
+                <div class="usuario-marcador">
+                    <h3>Tu</h3>
+                    <span id="puntosUsuario" class="puntos">0</span>
+                </div>
+                <div class="computadora-marcador">
+                    <h3>Computadora</h3>
+                    <span id="puntosComputadora" class="puntos">0</span>
+                </div>
+            </div>
+            <div class="elecciones">
+                <div class="eleccion-usuario">
+                    <p>Tu eleccion:</p>
+                    <div id="eleccionUsuario" class="icono-eleccion">?</div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="eleccion-computadora">
+                    <p>Computadora:</p>
+                    <div id="eleccionComputadora" class="icono-eleccion">?</div>
+                </div>
+            </div>
+            <div id="resultadoRonda" class="resultado-ronda">Elige una opcion para comenzar!</div>
+            <div class="botones-ppt">
+                <button id="piedraBtn" class="ppt-btn piedra">Piedra</button>
+                <button id="papelBtn" class="ppt-btn papel">Papel</button>
+                <button id="tijeraBtn" class="ppt-btn tijera">Tijera</button>
+            </div>
+            <button id="reiniciarMarcadorBtn" class="reiniciar-marcador-btn">Reiniciar Marcador</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="proyecto">
+    <button class="btn">Ver +</button>
+    <div class="descripcion">Modo Oscuro / Claro</div>
+    <div class="contenido-darkmode">
+        <div class="darkmode-card">
+            <div class="darkmode-header">
+                <span class="darkmode-icon">◐</span>
+                <h2>Modo Oscuro / Claro</h2>
+            </div>
+            <p class="darkmode-description">
+                Cambia entre tema oscuro y claro para una experiencia visual personalizada.
+                Tu preferencia se guardará automáticamente.
+            </p>
+            <div class="toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label" id="toggleLabel">Modo Claro</span>
+            </div>
+            <div class="darkmode-preview">
+                <div class="preview-circle light-preview"></div>
+                <span>→</span>
+                <div class="preview-circle dark-preview"></div>
+            </div>
+            <div class="darkmode-footer">
+                <small>La preferencia se guarda automáticamente</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="proyecto">
+    <button class="btn">Ver +</button>
+    <div class="descripcion">Galería de Imágenes</div>
+    <div class="contenido-galeria">
+        <div class="galeria-container">
+            <h1>Galería de Imágenes</h1>
+            
+            <!-- Barra de búsqueda -->
+            <div class="galeria-search">
+                <input type="text" id="searchInput" class="search-galeria" placeholder="Buscar imágenes...">
+                <span class="search-icon">🔍</span>
+            </div>
+            
+            <!-- Botones de filtro -->
+            <div class="filtros">
+                <button class="filtro-btn active" data-filtro="todas">Todas</button>
+                <button class="filtro-btn" data-filtro="animales">Animales</button>
+                <button class="filtro-btn" data-filtro="tecnologia">Tecnología</button>
+                <button class="filtro-btn" data-filtro="naturaleza">Naturaleza</button>
+            </div>
+            
+            <!-- Cuadrícula de imágenes -->
+            <div class="galeria-grid" id="galeriaGrid"></div>
+            
+            <!-- Mensaje cuando no hay resultados -->
+            <div id="noResults" class="no-results" style="display: none;">
+                No se encontraron imágenes que coincidan con tu búsqueda.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para imagen ampliada -->
+<div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-caption" id="modalCaption"></div>
+</div>
+
+<footer class="footer">
+    <p>Fernando Valera - 2026 - 
+        <a href="https://github.com/fernandojosue1666-jpg" target="_blank" rel="noopener noreferrer">
+            GitHub: https://github.com/fernandojosue1666-jpg
+        </a>
+    </p>
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>
